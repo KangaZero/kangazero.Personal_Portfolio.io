@@ -159,3 +159,29 @@ footer{
 .screen_reader{
     display: none;
 }
+
+@media screen and (max-width: 992px) {
+  h1, h2, nav {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  img {
+    width: 50%;
+  }
+
+  }
+  
+
+  @media screen and (max-width: 768px) {
+    h1, h2, nav {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+      }
+
+    img {
+        width: 100%;
+      }
+  }
