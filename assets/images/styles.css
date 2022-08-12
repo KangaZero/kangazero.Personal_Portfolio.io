@@ -1,17 +1,20 @@
 :root{
     --cool: linear-gradient(228deg, rgba(57,162,159,1) 23%, rgba(57,82,162,1) 53%, rgba(221,13,217,1) 100%);
     --warm: linear-gradient(228deg, rgba(57,162,159,1) 23%, rgba(253,29,29,1) 38%, rgba(252,176,69,1) 80%);
+    --test: rgba(57,162,159,1);
+    --select: linear-gradient(45deg, rgb(85, 19, 178), rgba(97, 201, 172, 0.623) );
 }
 
 body{
-    background: var(--cool);
+    background: var(--test);
     line-height: 1.5;
+    box-sizing: border-box;
 }
 
 
 header >* {
     display: flex;
-    font-family:Verdana, Geneva, Tahoma, sans-serif
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 h1 {
@@ -21,7 +24,6 @@ h1 {
 
 nav {
     flex-flow: row nowrap;
-    border: 1px solid black;
     justify-content: flex-end;
     background: var(--warm);
     width: 100%;
@@ -57,16 +59,35 @@ a:visited {
 #About{
     display:flex;
     flex-direction: row;
+  
+}
+
+#Work:hover, #Contact:hover, #About:hover{
+    background: var(--select);
 }
 
 h2{
     font-size: 150%;
     padding: 5%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 17%;
     height: 300px;
     overflow:hidden;
 }
+
+h2:hover{
+    animation: glow 2s ease infinite alternate;
+}
+/*https://www.w3schools.com/howto/howto_css_glowing_text.asp*/
+@-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 1px rgb(16, 6, 6), 0 0 2px rgb(83, 40, 40), 0 0 3px #123257, 0 0 4px #5bada4, 0 0 5px #7aa339, 0 0 6px #88b7cb, 0 0 7px #e60073;
+    }
+    
+    to {
+      text-shadow: 0 0 2px #fff, 0 0 3px #ff4da6, 0 0 4px #ff4da6, 0 0 5px #ff4da6, 0 0 6px #ff4da6, 0 0 7px #ff4da6, 0 0 8px #ff4da6;
+    }
+  }
 
 .content{
     display: flex;
@@ -74,7 +95,7 @@ h2{
     align-items: center;
     flex-wrap: wrap;
     width: 83%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 /*About end*/
 
@@ -86,11 +107,23 @@ h2{
 
 .container{
     display: grid;
+    /*to center items into 2x2 equally*/
     grid-template-columns: auto auto;
     grid-row: auto auto;
-    grid-column-gap: 20px;
-    border: 1px solid black;
+    /*grid-column-gap: 20px;*/
     width: 83%;
+    height: 30%;    
+    
+}
+
+img {
+    width:100%;
+    height:100%;
+}
+
+figcaption {
+    position: relative;
+    bottom: 15%;
 }
 /*Work end*/
 
@@ -114,9 +147,15 @@ h2{
     
     width: 300px;
     height: 300px;
-    border: 1px solid black;
+    text-align: center;
+    line-height: 2.5rem;
 }
 
 footer{
     text-align: center;
+    margin: 10px;
+}
+
+.screen_reader{
+    display: none;
 }
