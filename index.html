@@ -8,38 +8,56 @@
     <link rel="stylesheet" type="text/css" href="./assets/images/styles.css">
     <title>My Portfolio</title>
 </head>
+
 <body>
     <header>
         <h1>Portfolio</h1>
-        <nav>
-            <ul class="navigation"><a href="#About">About</a></ul>
-            <ul class="navigation"><a href="#Work">Work</a></ul>
-            <ul class="navigation"><a href="#Resume" target="_blank">Resume</a></ul>
-            <ul class="navigation"><a href="#Contact">Contact</a></ul>
+        <nav class="navbar">
+         <a href="#About">About</a>
+         <a href="#Work">Work</a>
+         <a href="#Resume" target="_blank">Resume</a>
+         <a href="#Contact">Contact</a>
+         <!--
+         <ul>
+            <li class="navigation"><a href="#About">About</a></li>
+            <li class="navigation"><a href="#Work">Work</a></li>
+            <li class="navigation"><a href="#Resume" target="_blank">Resume</a></li>
+            <li class="navigation"><a href="#Contact">Contact</a></li>
+        </ul> -->
         </nav>
     </header>
-    <main>
-        <article id="About">
+
+    <main class="main_container"> 
+        <!-- About section-->
+        <article id="About" class="page_section">
             <h2>About</h2>
             <div class="content">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil natus recusandae amet nostrum odit, ut unde non sint, quia sed inventore odio, delectus iure! Eligendi vitae fuga blanditiis accusamus tempore!</p>
             </div>
         </article>
-        <article id="Work">
+        <!-- Work section-->
+        <article id="Work" class="page_section">
                 <h2>Work</h2>
             <div class="container">
+                <a href="#">
                 <div class="image_border">
                     <img src="assets/images/Harold.png" alt="My first web project">
                         <figcaption>Work 1</figcaption>
                 </div>
+                </a>
+                <a href="#">
                 <div class="image_border">
                     <img src="assets/images/beemovie.png" alt="My second web project">
                         <figcaption>Work 2</figcaption>
                 </div>
+                 </a>
+                 <a href="#">
                 <div class="image_border">
                     <img src="assets/images/doge.png" alt="My third web project">
                         <figcaption>Work 3</figcaption>
                 </div>
+                </a>
+                <a href="#">
                 <div class="image_border">
                     <img src="assets/images/spongebob.png" alt="My fourth web project">
                         <figcaption>Work 4</figcaption>
@@ -47,29 +65,30 @@
                         <figcaption>Work 5</figcaption>
                     </image>-->
                 </div>
+                </a>
             </div>
             </article>
-            <article id="Contact">
+           <article id="Contact" class="page_section">
                 <h2>Contact</h2>
             <div class="contact_box">
-                <div class="phone_box">
+                <address class="phone_box">
                     <h3 label for="phone">Phone No.</h3>
                     <p label for="phone"><a href="tel:778-330-2389">+612345678</a></p>
-                </div>
-                <div class="email_box">
+                </address>
+                <address class="email_box">
                     <h3 label for="email">Email</h3>
                     <p label for="email"><a href="mailto:santa@officialsantaemail.com">example@gmail.com</a></p>
-                </div>
-                <div class="social_box">
+                </address>
+                <address class="social_box">
                     <h3>Socials</h3>
                     <ul>
                         <li><a href="#" target="_blank">Github</a></li>
                         <li><a href="#" target="_blank">Linkeln</a></li>
                         <li><a href="#" target="_blank">Random</a></li>
                     </ul>
-                </div>
+                </address>
             </div>
-            </article>
+            </article> 
     </main>
     <footer>
         <div>
