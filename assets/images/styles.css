@@ -1,17 +1,19 @@
 :root{
     --cool: linear-gradient(228deg, rgba(57,162,159,1) 23%, rgba(57,82,162,1) 53%, rgba(221,13,217,1) 100%);
     --warm: linear-gradient(228deg, rgba(57,162,159,1) 23%, rgba(253,29,29,1) 38%, rgba(252,176,69,1) 80%);
-    --test: rgba(57,162,159,1);
+    --test: rgb(233, 239, 238);
+    --white: rgb(164, 217, 214);
     --select: linear-gradient(45deg, rgb(85, 19, 178), rgba(97, 201, 172, 0.623) );
 }
 
 body{
-    background: var(--test);
+    background: var(--white);
     line-height: 1.5;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
 header {
     display: flex;
     flex-direction: row;
@@ -21,10 +23,9 @@ header {
   }
  
 header h1 {
-    color: red;
-    background-color: var(--test);
+    color: rgba(26, 4, 4, 0.473);
     padding: 3%;
-    line-height: 1.5;
+    line-height: 1.2;
   }
    
 nav {
@@ -36,7 +37,7 @@ nav {
 
 nav a {
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 10px 50px;
     margin-left: -20px;
     font-size: 1.5rem;
   }
@@ -44,15 +45,32 @@ nav a {
 .navbar{
     flex: 0 0 90%;
 }*/
-  
 
-.navigation{ 
-    display: flex;
-    justify-content: flex-end;
-    padding: 1% 1%;
-    margin: 1% 0;
-    font-size: 120%;
+/*hover features for fun*/
+h2:hover{
+  animation: glow 2s ease infinite alternate;
 }
+
+/*https://www.w3schools.com/howto/howto_css_glowing_text.asp*/
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 1px rgb(16, 6, 6), 0 0 2px rgb(83, 40, 40), 0 0 3px #123257, 0 0 4px #5bada4, 0 0 5px #7aa339, 0 0 6px #88b7cb, 0 0 7px #e60073;
+  }
+  
+  to {
+    text-shadow: 0 0 2px #fff, 0 0 3px #ff4da6, 0 0 4px #ff4da6, 0 0 5px #ff4da6, 0 0 6px #ff4da6, 0 0 7px #ff4da6, 0 0 8px #ff4da6;
+  }
+}
+
+h1:hover{
+  transition: 2s;
+  transform: rotateY(360deg);
+
+}
+
+#Work:hover, #Contact:hover, #About:hover, header:hover, footer:hover{
+  background: var(--select);
+} 
 
 a:link {
     text-decoration: none;
@@ -60,10 +78,15 @@ a:link {
 }
 
 a:hover{
-    transition: 0.1s ease-out;
+    transition: 0.3s ease-out;
     font-size: 110%;
 
 }
+
+nav > a:hover{
+  font-size: 1.7rem;
+}
+
 a:active{
     color:black;
 }
@@ -74,11 +97,23 @@ a:visited {
 
 /*main*/
 .main_container {
-  max-width: 90%;
+  max-width: 95%;
   margin: 0 auto;
+  border: 10px double black;
 }
 
 /*About start*/
+.page_section > h2{
+  flex: 0 0 15%;
+  font-size: 1.7rem;
+  text-align: center;
+  padding: 5%;
+  width: 17%;
+  height: 100%;
+  padding-right: 40px;
+  border-right: 5px solid rgb(184, 201, 233);
+}
+
 .page_section{
   display: flex;
   flex-flow: row wrap;
@@ -87,34 +122,6 @@ a:visited {
   margin: 30px 0;
   padding: 10px 0;
 }
-
-
-#Work:hover, #Contact:hover, #About:hover{
-    background: var(--select);
-}
-
-h2{
-    font-size: 150%;
-    padding: 5%;
-    width: 17%;
-    height: 300px;
-    overflow:hidden;
-    flex-wrap: wrap;
-}
-
-h2:hover{
-    animation: glow 2s ease infinite alternate;
-}
-/*https://www.w3schools.com/howto/howto_css_glowing_text.asp*/
-@-webkit-keyframes glow {
-    from {
-      text-shadow: 0 0 1px rgb(16, 6, 6), 0 0 2px rgb(83, 40, 40), 0 0 3px #123257, 0 0 4px #5bada4, 0 0 5px #7aa339, 0 0 6px #88b7cb, 0 0 7px #e60073;
-    }
-    
-    to {
-      text-shadow: 0 0 2px #fff, 0 0 3px #ff4da6, 0 0 4px #ff4da6, 0 0 5px #ff4da6, 0 0 6px #ff4da6, 0 0 7px #ff4da6, 0 0 8px #ff4da6;
-    }
-  }
 
 .content{
     display: flex;
@@ -127,31 +134,40 @@ h2:hover{
 /*About end*/
 
 /*Work start*/
-#Work{
-    display:flex;
-    flex-direction:row;
-}
 
 .container{
-    display: grid;
-    /*to center items into 2x2 equally*/
-    grid-template-columns: auto auto;
-    grid-row: auto auto;
-    /*grid-column-gap: 20px;*/
-    width: 83%;
-    height: 30%;    
-    
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 80%;
+  height: 30%;   
 }
 
-img {
-    width:100%;
-    height:100%;
+.flex{
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: 80%;
+  border: 5px solid black;
+  background-color: blue;
+  /*recommended by tutor*/
+  flex-basis: calc(50% - 1em);
+  padding: 0 0 20px 0;
+  margin: 0.5em;
 }
 
-figcaption {
-    position: relative;
-    bottom: 15%;
+img{
+  width:100%;
+  height:100%;
 }
+
+.flex h3{
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background-color: #ff4da6;
+}
+
 /*Work end*/
 
 
@@ -170,34 +186,59 @@ figcaption {
     width: 80%;
 }
 
-.phone_box, .email_box, .social_box{
-    
-    width: 300px;
-    height: 300px;
+.phone_box, .email_box, .social_box{ 
+    width: 150px;
+    height: 150px;
     text-align: center;
-    line-height: 2.5rem;
+    line-height: 1.5;
 }
 
 footer{
     text-align: center;
     margin: 10px;
-    font-family: "Comic Sans" !important;
+    font-family:'Times New Roman', Times, serif;
+    font-style: italic;
 }
 
 .screen_reader{
     display: none;
 }
 
-  
+  /*tutor recommendations*/
   @media screen and (max-width: 768px) {
-    h1, h2, nav {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        justify-content: center;
-      }
+    header{
+      display: flex;
+      justify-content: center;
+      text-align: center;
+    }
 
-    img {
-        width: 100%;
-      }
+    /*attempt to make individual nav links occupy it's own row
+
+    header > h1, header > nav{
+      flex-direction: column;
+    }
+
+    header > h1{
+      order: 1;
+    }
+
+    header > nav{ 
+      order: 2;
+    }
+
+    main{
+      justify-content: center;
+    }
+    */
+
+    .page_section > h2,
+    .page_section > div,
+    .flex {
+      flex: 0 0 100%;
+      margin-bottom: 10px;
+    }
+    
+    .page_section > h2{
+      text-align: left;
+    }
   }
